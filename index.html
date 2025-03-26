@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Buba ❤️</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: url('patrick-heart.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            margin-top: 100px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            display: none;
+        }
+        h2 {
+            color: #ff66b2;
+            font-size: 28px;
+        }
+        p {
+            font-size: 18px;
+        }
+        #kissBtn {
+            font-size: 20px;
+            background-color: #ff66b2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .question {
+            font-size: 24px;
+            margin-top: 50px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        #noBtn {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!-- YES/NO GAME -->
+    <div class="question">
+        <h2>Do you love Fardeen? ❤️</h2>
+        <div class="buttons">
+            <button class="btn" id="yesBtn">Yes 😘</button>
+            <button class="btn" id="noBtn">No 😢</button>
+        </div>
+    </div>
+
+    <!-- LOVE LETTER -->
+    <div class="container" id="loveLetter">
+        <h2>My Dearest Buba,</h2>
+        <p>
+            When we first met, I never imagined you would become my whole world. 🥹  
+            In the beginning, we just used to say "good morning" and react to each other’s stories, but now,  
+            you have become a part of my heart that I can never let go. ❤️  
+        </p>
+        <p>
+            I remember how you used to say **"I love you"** to me every morning, evening, and before sleeping. 🥺  
+            Now, I wait for your messages every single day. Do you remember when you told me **"I'm free on April 20"**?  
+            Since that day, I have been counting down the days, waiting just to talk to you properly again. 😭  
+        </p>
+        <p>
+            Your every "Mwahh" is the most precious sound to me. 🌸  
+            I want to see you smile always, and I want you to be happy forever. 💕  
+            Even when we are miles apart, my heart always feels close to you.  
+        </p>
+        <p>
+            **Buba, I want to tell you so much, but I can't say everything because I don’t want you to get bored.**  
+            But just know this—**you are the most special person in my life, and I love you forever.** 😘💖  
+        </p>
+        <button id="kissBtn">Mwahh! 😘</button>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="romantic-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        var noBtn = document.getElementById("noBtn");
+        var yesBtn = document.getElementById("yesBtn");
+        var loveLetter = document.getElementById("loveLetter");
+        var bgMusic = document.getElementById("bgMusic");
+
+        noBtn.addEventListener("click", function() {
+            alert("Think again! 🥺");
+            var x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            var y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        });
+
+        yesBtn.addEventListener("click", function() {
+            document.querySelector(".question").style.display = "none";
+            loveLetter.style.display = "block";
+            bgMusic.play();
+        });
+
+        document.getElementById("kissBtn").addEventListener("click", function() {
+            alert("Mwahh! 😘 You are my love, Buba!");
+        });
+    </script>
+</body>
+</html>
